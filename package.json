@@ -1,0 +1,42 @@
+{
+  "name": "plants-vs-zombies-3d-game",
+  "version": "1.0.0",
+  "description": "一个融合植物大战僵尸和我的世界元素的3D塔防建造游戏",
+  "main": "app.js",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'No build process needed for vanilla JS'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "game",
+    "3d",
+    "tower-defense",
+    "plants-vs-zombies",
+    "minecraft",
+    "threejs",
+    "webgl",
+    "javascript"
+  ],
+  "author": "111222lhc",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/111222lhc/plants-vs-zombies-3d-game.git"
+  },
+  "homepage": "https://111222lhc.github.io/plants-vs-zombies-3d-game/",
+  "bugs": {
+    "url": "https://github.com/111222lhc/plants-vs-zombies-3d-game/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
