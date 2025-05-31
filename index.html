@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>方块植物大战僵尸</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- 游戏启动界面 -->
+    <div id="startScreen" class="start-screen">
+        <div class="start-content">
+            <h1>方块植物大战僵尸</h1>
+            <div class="game-preview">
+                <img src="https://pplx-res.cloudinary.com/image/upload/v1748599084/gpt4o_images/od0hn20cszntclymucvj.png" alt="游戏概念图" class="preview-image">
+            </div>
+            <div class="game-description">
+                <h3>游戏说明</h3>
+                <ul>
+                    <li>拖拽鼠标旋转3D视角</li>
+                    <li>左键点击空地种植植物</li>
+                    <li>右键点击放置方块建造防御</li>
+                    <li>保护中心基地免受僵尸攻击</li>
+                    <li>管理阳光和材料两种资源</li>
+                </ul>
+            </div>
+            <button class="btn btn--primary btn--lg" id="startGameBtn">开始游戏</button>
+        </div>
+    </div>
+
+    <!-- 主游戏界面 -->
+    <div id="gameScreen" class="game-screen hidden">
+        <!-- 顶部状态栏 -->
+        <div class="status-bar">
+            <div class="resource-display">
+                <div class="resource-item">
+                    <span class="resource-icon sun-icon">☀️</span>
+                    <span id="sunCount">200</span>
+                </div>
+                <div class="resource-item">
+                    <span class="resource-icon material-icon">🧱</span>
+                    <span id="materialCount">50</span>
+                </div>
+            </div>
+            <div class="game-info">
+                <div class="wave-info">
+                    波次: <span id="currentWave">1</span>/10
+                </div>
+                <div class="base-health">
+                    基地生命: <span id="baseHealth">100</span>
+                </div>
+                <div class="day-night">
+                    <span id="timePhase">白天</span>
+                    <div class="time-bar">
+                        <div id="timeProgress" class="time-progress"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="game-controls">
+                <button class="btn btn--secondary btn--sm" id="pauseBtn">暂停</button>
+                <button class="btn btn--secondary btn--sm" id="speedBtn">2x</button>
+            </div>
+        </div>
+
+        <!-- 左侧植物面板 -->
+        <div class="left-panel">
+            <h3>植物</h3>
+            <div class="plant-grid" id="plantGrid">
+                <!-- 植物选项将由JS生成 -->
+            </div>
+        </div>
+
+        <!-- 右侧建造面板 -->
+        <div class="right-panel">
+            <h3>建造</h3>
+            <div class="block-grid" id="blockGrid">
+                <!-- 方块选项将由JS生成 -->
+            </div>
+            <div class="build-mode">
+                <label class="form-label">
+                    <input type="checkbox" id="buildModeToggle"> 建造模式
+                </label>
+            </div>
+        </div>
+
+        <!-- 3D游戏世界 -->
+        <div id="gameWorld" class="game-world">
+            <!-- Three.js画布将插入这里 -->
+        </div>
+
+        <!-- 游戏信息显示 -->
+        <div class="game-messages" id="gameMessages">
+            <!-- 消息将动态添加 -->
+        </div>
+    </div>
+
+    <!-- 游戏结束界面 -->
+    <div id="gameOverScreen" class="game-over-screen hidden">
+        <div class="game-over-content">
+            <h2 id="gameOverTitle">游戏结束</h2>
+            <div class="final-stats">
+                <div class="stat-item">
+                    <span class="stat-label">击败波次:</span>
+                    <span id="finalWave">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">击杀僵尸:</span>
+                    <span id="zombiesKilled">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">游戏时长:</span>
+                    <span id="gameTime">0</span>分钟
+                </div>
+            </div>
+            <div class="game-over-buttons">
+                <button class="btn btn--primary" id="restartBtn">重新开始</button>
+                <button class="btn btn--secondary" id="mainMenuBtn">主菜单</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
