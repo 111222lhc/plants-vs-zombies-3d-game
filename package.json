@@ -2,7 +2,7 @@
   "name": "plants-vs-zombies-3d-game",
   "version": "1.0.0",
   "description": "一个融合植物大战僵尸和我的世界元素的3D塔防建造游戏",
-  "main": "app.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "python -m http.server 8000",
     "dev": "python -m http.server 8000",

@@ -50,7 +50,10 @@ python -m http.server 8000
 ```
 ├── index.html          # 主页面
 ├── style.css           # 样式文件
-├── app.js             # 游戏逻辑
+├── src/                # 游戏源代码目录
+│   ├── data.js         # 游戏数据
+│   ├── game.js         # 游戏核心逻辑
+│   └── main.js         # 启动脚本
 └── README.md          # 说明文档
 ```
 
